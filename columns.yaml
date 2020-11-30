@@ -1,0 +1,51 @@
+# columns config
+
+timeStampColumnKey: &timeStampColumn
+    ColumnName: timestamp
+    StartPattern: '^'
+    PatternLength: 26
+
+securityIdColumn: &securityIdColumn
+    ColumnName: securityId
+    StartPattern: 'securityId: '
+    EndPattern: ','
+
+priceColumn: &priceColumn
+    ColumnName: price
+    StartPattern: ' price: '
+    EndPattern: ','
+
+quantityColumn: &quantityColumn
+    ColumnName: quantity
+    StartPattern: ' quantity: '
+    EndPattern: ','
+
+sideColumn: &sideColumn
+    ColumnName: side
+    StartPattern: ' side: '
+    EndPattern: ','
+
+bidColumn: &bidColumn
+    ColumnName: bid
+    StartPattern: ' bid: '
+    EndPattern: ','
+
+askColumn: &askColumn
+    ColumnName: ask
+    StartPattern: ' ask: '
+    EndPattern: '$'
+
+netPositionColumn: &netPositionColumn
+    ColumnName: netPosition
+    StartPattern: ' netPosition: '
+    EndPattern: ','
+
+sodPositionColumn: &sodPositionColumn
+    ColumnName: sodPosition
+    StartPattern: ' startOfDayPosition: '
+    EndPattern: ','
+
+dayTradedVolumeColumn: &dayTradedVolumeColumn
+    ColumnName: dayTradedVolume
+    StartPattern: ' dayTradedVolume: '
+    EndPattern: '$'

@@ -1,0 +1,17 @@
+Orders: &Orders
+    AppName: Orders
+    StartBlockPattern: ['']
+    EndBlockPattern: ['']
+    OutputElements: []
+    LogLines:
+        - Tag: NEW
+          Patterns: ['ORDER NEW']
+          ExampleLine: '2020-06-02 14:33:56.531063 ORDER NEW price: 123.123, quantity: 1000, securityId: 999, side: BUY, bid: 124.0, ask: 125.0'
+          Elements:
+              TimeStampKey:     <<: *timeStampColumn
+              SecurityIdKey:    <<: *securityIdColumn
+              PriceKey:         <<: *priceColumn
+              QuantityKey:      <<: *quantityColumn
+              SideKey:          <<: *sideColumn
+              BidKey:           <<: *bidColumn
+              AskKey:           <<: *askColumn

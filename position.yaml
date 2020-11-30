@@ -1,0 +1,15 @@
+Position: &Position
+    AppName: Position
+    StartBlockPattern: ['']
+    EndBlockPattern: ['']
+    OutputElements: []
+    LogLines:
+        - Tag: POSITION
+          Patterns: ['POSITION']
+          ExampleLine: '2020-07-12 01:54:23.124127 POSITION securityId: 154, netPosition: -1230, startOfDayPosition: 1240, dayTradedVolume: 2470'
+          Elements:
+              TimeStampKey:       <<: *timeStampColumn
+              SecurityIdKey:      <<: *securityIdColumn
+              NetPositionKey:     <<: *netPositionColumn
+              SodPositionKey:     <<: *sodPositionColumn
+              DayTradedVolumeKey: <<: *dayTradedVolumeColumn

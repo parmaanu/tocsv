@@ -1,0 +1,100 @@
+EXEC qty:81 matchedQty:12 prc:66.456005 sec:1211
+EXEC qty:81 matchedQty:18 prc:6.563702 sec:53932
+EXEC qty:56 matchedQty:0 prc:51.521263 sec:23215
+EXEC qty:62 matchedQty:14 prc:31.805817 sec:38170
+EXEC qty:11 matchedQty:20 prc:67.908468 sec:35810
+EXEC qty:95 matchedQty:66 prc:57.067328 sec:7826
+EXEC qty:47 matchedQty:22 prc:75.257304 sec:19704
+EXEC qty:90 matchedQty:15 prc:52.382031 sec:28536
+EXEC qty:87 matchedQty:56 prc:97.524162 sec:35148
+EXEC qty:37 matchedQty:31 prc:69.202459 sec:19346
+EXEC qty:13 matchedQty:40 prc:54.415557 sec:9027
+EXEC qty:33 matchedQty:72 prc:25.354050 sec:15076
+EXEC qty:59 matchedQty:3 prc:88.054312 sec:50761
+EXEC qty:89 matchedQty:24 prc:97.691687 sec:24081
+EXEC qty:88 matchedQty:63 prc:24.151509 sec:63403
+EXEC qty:51 matchedQty:60 prc:80.105504 sec:14748
+EXEC qty:66 matchedQty:53 prc:89.699196 sec:12418
+EXEC qty:83 matchedQty:71 prc:9.083728 sec:18152
+EXEC qty:2 matchedQty:68 prc:34.795396 sec:26662
+EXEC qty:77 matchedQty:13 prc:64.948946 sec:15540
+EXEC qty:23 matchedQty:3 prc:13.065112 sec:6045
+EXEC qty:41 matchedQty:34 prc:72.114777 sec:18323
+EXEC qty:91 matchedQty:52 prc:62.272832 sec:6232
+EXEC qty:46 matchedQty:7 prc:18.724610 sec:21767
+EXEC qty:52 matchedQty:18 prc:28.133029 sec:30078
+EXEC qty:25 matchedQty:1 prc:55.014692 sec:27133
+EXEC qty:87 matchedQty:35 prc:0.051382 sec:32501
+EXEC qty:90 matchedQty:7 prc:60.397810 sec:24361
+EXEC qty:91 matchedQty:32 prc:0.284304 sec:41473
+EXEC qty:67 matchedQty:37 prc:81.540517 sec:45174
+EXEC qty:26 matchedQty:52 prc:2.626515 sec:16303
+EXEC qty:66 matchedQty:45 prc:24.746661 sec:23246
+EXEC qty:19 matchedQty:6 prc:69.383814 sec:39927
+EXEC qty:85 matchedQty:35 prc:75.076306 sec:65461
+EXEC qty:28 matchedQty:68 prc:35.576727 sec:46543
+EXEC qty:24 matchedQty:47 prc:49.839430 sec:49084
+EXEC qty:16 matchedQty:14 prc:58.938309 sec:33690
+EXEC qty:51 matchedQty:26 prc:41.176269 sec:62535
+EXEC qty:44 matchedQty:64 prc:79.720854 sec:43535
+EXEC qty:1 matchedQty:15 prc:13.041385 sec:65122
+EXEC qty:67 matchedQty:6 prc:9.838379 sec:53818
+EXEC qty:22 matchedQty:48 prc:7.619026 sec:48400
+EXEC qty:43 matchedQty:43 prc:32.261068 sec:25806
+EXEC qty:35 matchedQty:15 prc:68.417513 sec:53834
+EXEC qty:57 matchedQty:15 prc:71.636837 sec:36543
+EXEC qty:30 matchedQty:63 prc:9.803087 sec:3439
+EXEC qty:20 matchedQty:33 prc:34.431502 sec:19544
+EXEC qty:47 matchedQty:10 prc:40.207085 sec:58706
+EXEC qty:29 matchedQty:45 prc:82.792810 sec:2164
+EXEC qty:95 matchedQty:66 prc:41.154036 sec:23232
+ORDER qty:81 prc:94.050909 sec:19911
+ORDER qty:59 prc:42.463750 sec:53638
+ORDER qty:25 prc:15.651925 sec:32584
+ORDER qty:0 prc:51.521263 sec:23215
+ORDER qty:62 prc:38.065719 sec:8536
+ORDER qty:74 prc:28.303415 sec:23701
+ORDER qty:37 prc:21.855305 sec:1807
+ORDER qty:66 prc:57.067328 sec:7826
+ORDER qty:47 prc:29.708256 sec:20527
+ORDER qty:88 prc:86.533501 sec:6135
+ORDER qty:41 prc:2.830308 sec:6619
+ORDER qty:31 prc:97.524162 sec:35148
+ORDER qty:37 prc:5.912065 sec:17149
+ORDER qty:26 prc:17.326624 sec:49810
+ORDER qty:94 prc:27.850762 sec:55793
+ORDER qty:47 prc:25.354050 sec:15076
+ORDER qty:59 prc:36.180548 sec:41749
+ORDER qty:21 prc:89.436173 sec:25751
+ORDER qty:0 prc:7.429100 sec:64200
+ORDER qty:38 prc:24.151509 sec:63403
+ORDER qty:51 prc:74.184896 sec:63677
+ORDER qty:56 prc:18.292492 sec:26532
+ORDER qty:61 prc:68.265349 sec:36511
+ORDER qty:46 prc:9.083728 sec:18152
+ORDER qty:2 prc:95.494544 sec:49511
+ORDER qty:94 prc:71.090720 sec:60935
+ORDER qty:96 prc:55.176505 sec:54047
+ORDER qty:53 prc:13.065112 sec:6045
+ORDER qty:41 prc:32.208397 sec:37353
+ORDER qty:43 prc:8.552051 sec:42162
+ORDER qty:78 prc:36.969284 sec:13186
+ORDER qty:7 prc:18.724610 sec:21767
+ORDER qty:52 prc:12.675293 sec:41357
+ORDER qty:98 prc:43.491247 sec:7463
+ORDER qty:15 prc:62.360883 sec:52039
+ORDER qty:10 prc:0.051382 sec:32501
+ORDER qty:90 prc:49.786811 sec:10122
+ORDER qty:53 prc:2.967128 sec:25350
+ORDER qty:84 prc:91.582131 sec:44995
+ORDER qty:37 prc:81.540517 sec:45174
+ORDER qty:26 prc:60.016560 sec:43021
+ORDER qty:79 prc:24.969320 sec:64726
+ORDER qty:93 prc:17.365584 sec:6235
+ORDER qty:81 prc:69.383814 sec:39927
+ORDER qty:85 prc:97.567481 sec:251
+ORDER qty:49 prc:75.316128 sec:51762
+ORDER qty:84 prc:83.193085 sec:39768
+ORDER qty:47 prc:49.839430 sec:49084
+ORDER qty:16 prc:39.221618 sec:59308
+ORDER qty:86 prc:57.208680 sec:30780
