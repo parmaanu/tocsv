@@ -1,8 +1,8 @@
 package main
 
 import (
-	"apps/filterlogs"
 	"fmt"
+	"tocsv/filterlogs"
 
 	"github.com/spf13/cobra"
 )

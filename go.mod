@@ -1,4 +1,4 @@
-module apps
+module tocsv
 
 go 1.12
 

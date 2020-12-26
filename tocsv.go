@@ -1,13 +1,13 @@
 package main
 
 import (
-	"apps/filterlogs"
 	"encoding/csv"
 	"fmt"
 	"io"
 	"os"
 	"strings"
 	"time"
+	"tocsv/filterlogs"
 
 	"github.com/parmaanu/goutils/errorutils"
 	"github.com/parmaanu/goutils/fileutils"

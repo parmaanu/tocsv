@@ -1,11 +1,12 @@
 package logparser_test
 
 import (
-	"apps/logparser"
-	"github.com/parmaanu/goutils/filesystem"
 	"math/rand"
 	"strconv"
 	"testing"
+	"tocsv/logparser"
+
+	"github.com/parmaanu/goutils/filesystem"
 
 	"github.com/stretchr/testify/assert"
 )
