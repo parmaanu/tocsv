@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
-	"github.com/parmaanu/goutils/filesystem"
-	"github.com/parmaanu/goutils/fileutils"
 	"io/ioutil"
 	"os"
 	"testing"
 	"time"
+
+	"github.com/parmaanu/goutils/filesystem"
+	"github.com/parmaanu/goutils/fileutils"
 
 	"github.com/stretchr/testify/assert"
 	tilde "gopkg.in/mattes/go-expand-tilde.v1"
@@ -19,6 +20,7 @@ var gStdoutReader, gStdoutWriter, gOriginalStdout *os.File
 func init() {
 	gMfs = filesystem.NewMockFileSystem()
 	filesystem.SetFileSystem(gMfs)
+	os.Unsetenv("SHOWCSV_RENDER_TUI")
 }
 
 func captureStdout() {
@@ -116,10 +118,10 @@ Apps:
 	assert.NotNil(t, tocsv, "not able to create tocsv instance")
 	tocsv.Run()
 
-	dt := time.Now().Format("20060201") // YYYYMMDD format
+	dt := time.Now().Format("20060102") // YYYYMMDD format
 	outputFileName, err := tilde.Expand(fmt.Sprintf("~/logs/Orders.%s.csv", dt))
 	assert.NoError(t, err, "error found while expanding full path")
-	assert.FileExists(t, outputFileName, "file does not exits")
+	assert.FileExists(t, outputFileName, outputFileName+" file does not exist")
 
 	output := string(fileutils.ReadFullFileAsBytes(outputFileName))
 	expectedOutput := `__tag__,timestamp,securityId,price,quantity,side,bid,ask
@@ -151,10 +153,10 @@ Apps:
 	assert.NotNil(t, tocsv, "not able to create tocsv instance")
 	tocsv.Run()
 
-	dt := time.Now().Format("20060201") // YYYYMMDD format
+	dt := time.Now().Format("20060102") // YYYYMMDD format
 	outputFileName, err := tilde.Expand(fmt.Sprintf("./Orders.%s.csv", dt))
 	assert.NoError(t, err, "error found while expanding full path")
-	assert.FileExists(t, outputFileName, "file does not exits")
+	assert.FileExists(t, outputFileName, "file does not exist")
 
 	output := string(fileutils.ReadFullFileAsBytes(outputFileName))
 	expectedOutput := `__tag__,timestamp,securityId,price,quantity,side,bid,ask

@@ -4,12 +4,14 @@ import (
 	"apps/filterlogs"
 	"encoding/csv"
 	"fmt"
-	"github.com/parmaanu/goutils/errorutils"
-	"github.com/parmaanu/goutils/fileutils"
 	"io"
 	"os"
 	"strings"
 	"time"
+
+	"github.com/parmaanu/goutils/errorutils"
+	"github.com/parmaanu/goutils/fileutils"
+	"github.com/parmaanu/showcsv"
 
 	tilde "gopkg.in/mattes/go-expand-tilde.v1"
 )
@@ -67,7 +69,13 @@ func NewTocsv(inputFiles []string, configFile string, anchorFiles []string, prin
 // Run runs the tocsv and prints output as csv
 func (a *Tocsv) Run() {
 	a.Logfilter.Run(a.callback)
-	a.writeCsv()
+	tableConfigs := a.writeAsCsvs()
+	if len(tableConfigs) > 0 {
+		// TODO, support multiple csv files
+		if err := showcsv.Display(tableConfigs[0]); err != nil {
+			panic(err)
+		}
+	}
 }
 
 func (a *Tocsv) callback(config *filterlogs.ClientConfigType, filteredDataMap map[string]*filterlogs.FilteredData) {
@@ -101,8 +109,8 @@ func (a *Tocsv) callback(config *filterlogs.ClientConfigType, filteredDataMap ma
 	appData.Data = append(appData.Data, outputRecord)
 }
 
-func (a *Tocsv) writeCsv() {
-
+func (a *Tocsv) writeAsCsvs() []*showcsv.TableConfig {
+	tableConfigs := []*showcsv.TableConfig{}
 	for appName, appData := range a.AppData {
 		// create header
 		header := []string{}
@@ -120,7 +128,7 @@ func (a *Tocsv) writeCsv() {
 		if a.PrintOnStdout {
 			printAsCsv(appName, os.Stdout, header, appData.Data)
 		} else {
-			dt := time.Now().Format("20060201") // YYYYMMDD format
+			dt := time.Now().Format("20060102") // YYYYMMDD format
 			fname := fmt.Sprintf("%s/%s.%s.csv", a.Config.LogDirectory, appName, dt)
 			oFile, err := os.Create(fname)
 			if errorutils.PrintOnErr("ERROR while opening file for writing, "+fname, err) {
@@ -129,9 +137,15 @@ func (a *Tocsv) writeCsv() {
 			defer oFile.Close()
 
 			printAsCsv(appName, oFile, header, appData.Data)
+			tableConfigs = append(tableConfigs, &showcsv.TableConfig{
+				Name:   fname,
+				Header: header,
+				Data:   appData.Data,
+			})
 			fmt.Println("Data fetched in", fname)
 		}
 	}
+	return tableConfigs
 }
 
 func printAsCsv(appName string, w io.Writer, header []string, data [][]string) {
