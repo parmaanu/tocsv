@@ -1,11 +1,12 @@
 package filterlogs
 
 import (
-	"apps/logparser"
 	"fmt"
+	"strings"
+	"tocsv/logparser"
+
 	"github.com/parmaanu/goutils/algoutils"
 	"github.com/parmaanu/goutils/fileutils"
-	"strings"
 )
 
 // // TODO,

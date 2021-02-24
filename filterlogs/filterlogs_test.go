@@ -1,12 +1,13 @@
 package filterlogs_test
 
 import (
-	"apps/filterlogs"
-	"github.com/parmaanu/goutils/filesystem"
 	"io/ioutil"
 	"os"
 	"strings"
 	"testing"
+	"tocsv/filterlogs"
+
+	"github.com/parmaanu/goutils/filesystem"
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/stretchr/testify/assert"

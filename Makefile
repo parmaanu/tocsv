@@ -1,4 +1,4 @@
-REPO_NAME := "apps"
+REPO_NAME := "tocsv"
 PKG_LIST := $(shell go list ${REPO_NAME}/... | grep -v /vendor/)
 GO_FILES := $(shell find . -name '*.go' | grep -v /vendor/ | grep -v _test.go)
 

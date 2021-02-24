@@ -1,15 +1,16 @@
 package main
 
 import (
-	"apps/filterlogs"
 	"encoding/csv"
 	"fmt"
-	"github.com/parmaanu/goutils/errorutils"
-	"github.com/parmaanu/goutils/fileutils"
 	"io"
 	"os"
 	"strings"
 	"time"
+	"tocsv/filterlogs"
+
+	"github.com/parmaanu/goutils/errorutils"
+	"github.com/parmaanu/goutils/fileutils"
 
 	tilde "gopkg.in/mattes/go-expand-tilde.v1"
 )
