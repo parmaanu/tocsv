@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"tocsv/filterlogs"
+	"tocsv/tocsvgo"
 
 	"github.com/spf13/cobra"
 )
@@ -23,7 +24,7 @@ func main() {
 		Run: func(cmd *cobra.Command, args []string) {
 			if len(inputFiles) == 0 {
 				// Read config and show config on stdout interactively
-				tocsvConfig := NewToCsvConfig(configFile)
+				tocsvConfig := tocsvgo.NewToCsvConfig(configFile)
 				if tocsvConfig != nil {
 					if len(anchorFiles) == 0 && len(tocsvConfig.AnchorFiles) > 0 {
 						anchorFiles = tocsvConfig.AnchorFiles
@@ -61,7 +62,7 @@ func main() {
 		return
 	}
 
-	tocsv := NewTocsv(inputFiles, configFile, anchorFiles, printOnStdout, interactiveMode)
+	tocsv := tocsvgo.NewTocsv(inputFiles, configFile, anchorFiles, printOnStdout, interactiveMode)
 	if tocsv != nil {
 		tocsv.Run()
 	}

@@ -1,7 +1,8 @@
-package main
+package tocsvgo
 
 import (
 	"fmt"
+
 	"github.com/parmaanu/goutils/errorutils"
 	"github.com/parmaanu/goutils/filesystem"
 	"github.com/parmaanu/goutils/fileutils"

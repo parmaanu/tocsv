@@ -1,13 +1,15 @@
-package main
+package tocsvgo_test
 
 import (
 	"fmt"
-	"github.com/parmaanu/goutils/filesystem"
-	"github.com/parmaanu/goutils/fileutils"
 	"io/ioutil"
 	"os"
 	"testing"
 	"time"
+	"tocsv/tocsvgo"
+
+	"github.com/parmaanu/goutils/filesystem"
+	"github.com/parmaanu/goutils/fileutils"
 
 	"github.com/stretchr/testify/assert"
 	tilde "gopkg.in/mattes/go-expand-tilde.v1"
@@ -53,7 +55,7 @@ Apps:
 		gMfs.SetFileData(f, []string{})
 	}
 
-	tocsv := NewTocsv([]string{fname}, configFile, anchorFiles, printOnStdout, interactiveMode)
+	tocsv := tocsvgo.NewTocsv([]string{fname}, configFile, anchorFiles, printOnStdout, interactiveMode)
 	assert.NotNil(t, tocsv, "not able to create tocsv instance")
 	tocsv.Run()
 
@@ -83,7 +85,7 @@ Apps:
 		gMfs.SetFileData(f, []string{})
 	}
 
-	tocsv := NewTocsv([]string{fname}, configFile, anchorFiles, printOnStdout, interactiveMode)
+	tocsv := tocsvgo.NewTocsv([]string{fname}, configFile, anchorFiles, printOnStdout, interactiveMode)
 	assert.NotNil(t, tocsv, "not able to create tocsv instance")
 	tocsv.Run()
 
@@ -112,7 +114,7 @@ Apps:
 		gMfs.SetFileData(f, []string{})
 	}
 
-	tocsv := NewTocsv([]string{fname}, configFile, anchorFiles, printOnStdout, interactiveMode)
+	tocsv := tocsvgo.NewTocsv([]string{fname}, configFile, anchorFiles, printOnStdout, interactiveMode)
 	assert.NotNil(t, tocsv, "not able to create tocsv instance")
 	tocsv.Run()
 
@@ -147,7 +149,7 @@ Apps:
 		gMfs.SetFileData(f, []string{})
 	}
 
-	tocsv := NewTocsv([]string{fname}, configFile, anchorFiles, printOnStdout, interactiveMode)
+	tocsv := tocsvgo.NewTocsv([]string{fname}, configFile, anchorFiles, printOnStdout, interactiveMode)
 	assert.NotNil(t, tocsv, "not able to create tocsv instance")
 	tocsv.Run()
 
@@ -189,7 +191,7 @@ Apps:
 	gMfs.SetFileData("orders.yaml", []string{})
 	gMfs.SetFileData("columns.yaml", []string{})
 
-	tocsv := NewTocsv([]string{fname}, configFile, anchorFiles, printOnStdout, interactiveMode)
+	tocsv := tocsvgo.NewTocsv([]string{fname}, configFile, anchorFiles, printOnStdout, interactiveMode)
 	assert.NotNil(t, tocsv, "not able to create tocsv instance")
 	tocsv.Run()
 
@@ -221,7 +223,7 @@ Apps:
 		gMfs.SetFileData(f, []string{})
 	}
 
-	tocsv := NewTocsv([]string{fname}, configFile, anchorFiles, printOnStdout, interactiveMode)
+	tocsv := tocsvgo.NewTocsv([]string{fname}, configFile, anchorFiles, printOnStdout, interactiveMode)
 	assert.NotNil(t, tocsv, "not able to create tocsv instance")
 	tocsv.Run()
 
