@@ -11,8 +11,14 @@ import (
 
 	"github.com/parmaanu/goutils/errorutils"
 	"github.com/parmaanu/goutils/fileutils"
+	"github.com/parmaanu/goutils/tuiutils"
+	"github.com/parmaanu/showcsv"
 
 	tilde "gopkg.in/mattes/go-expand-tilde.v1"
+)
+
+const (
+	quit = "Quit"
 )
 
 type appDataType struct {
@@ -26,6 +32,7 @@ type Tocsv struct {
 	Logfilter     *filterlogs.App
 	PrintOnStdout bool
 	Config        *TocsvConfig
+	OutputCsvMap  map[string]string
 }
 
 const (
@@ -62,6 +69,7 @@ func NewTocsv(inputFiles []string, configFile string, anchorFiles []string, prin
 		Logfilter:     filterlogs.NewApp(inputFiles, configFile, anchorFiles, interactiveMode),
 		PrintOnStdout: printOnStdout,
 		Config:        tocsvConfig,
+		OutputCsvMap:  make(map[string]string),
 	}
 }
 
@@ -69,6 +77,42 @@ func NewTocsv(inputFiles []string, configFile string, anchorFiles []string, prin
 func (a *Tocsv) Run() {
 	a.Logfilter.Run(a.callback)
 	a.writeCsv()
+}
+
+// DisplayFetchedCsvs shows the fetch csv data using showcsv on terminal
+func (a *Tocsv) DisplayFetchedCsvs() {
+	if a.PrintOnStdout || len(a.OutputCsvMap) == 0 {
+		return
+	}
+
+	options := []string{}
+	for appname := range a.OutputCsvMap {
+		options = append(options, appname)
+	}
+	options = append(options, quit)
+
+	for true {
+		selectedOption, err := tuiutils.TakeUserInput("Select a file", options)
+		if err != nil || len(selectedOption) == 0 {
+			fmt.Println("Error while selecting", err.Error(), ", selectedOption: ", selectedOption)
+			return
+		}
+
+		switch selectedOption {
+		case quit:
+			return
+
+		}
+		if selectedOption == quit {
+			return
+		}
+		fileName, exists := a.OutputCsvMap[selectedOption]
+		if !exists {
+			fmt.Println("selected file not found", fileName, ", outputCsvMap: ", a.OutputCsvMap)
+			return
+		}
+		showcsv.DisplayFile(fileName, true)
+	}
 }
 
 func (a *Tocsv) callback(config *filterlogs.ClientConfigType, filteredDataMap map[string]*filterlogs.FilteredData) {
@@ -130,6 +174,7 @@ func (a *Tocsv) writeCsv() {
 			defer oFile.Close()
 
 			printAsCsv(appName, oFile, header, appData.Data)
+			a.OutputCsvMap[appName] = fname
 			fmt.Println("Data fetched in", fname)
 		}
 	}

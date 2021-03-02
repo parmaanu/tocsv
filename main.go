@@ -66,4 +66,5 @@ func main() {
 	if tocsv != nil {
 		tocsv.Run()
 	}
+	tocsv.DisplayFetchedCsvs()
 }
