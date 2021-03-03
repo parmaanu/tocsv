@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"tocsv/filterlogs"
 	"tocsv/tocsvgo"
@@ -32,6 +33,16 @@ func main() {
 					filterlogs.PrintInteractiveConfig(configFile, anchorFiles)
 				}
 			}
+		},
+		Args: func(cmd *cobra.Command, args []string) error {
+			if len(inputFiles) != 0 {
+				return nil
+			}
+			if len(args) == 0 {
+				return errors.New("please provide log file")
+			}
+			inputFiles = args[:]
+			return nil
 		},
 	}
 

@@ -6,3 +6,5 @@ A convenient application to parse logfiles into csv files.
 TODO
 
 ### Sample Configuration
+
+https://github.com/parmaanu/tocsv.git
